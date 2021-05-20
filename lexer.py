@@ -82,4 +82,4 @@ class Lexer:
         print(token_list)
 
 test = Lexer()
-test.tokenizer("hello:3HHHH:3HHH:D:xthere:x:D")
+test.tokenizer("^^test^^")
