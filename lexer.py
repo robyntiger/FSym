@@ -1,27 +1,4 @@
-# take raw source code as series of characters
-# group it into a series of chunks called tokens
 import re
-
-'''class Lexer:
-    # Splits the string by emoticons
-    def scanner(self, code):
-        # keywords regex
-        KEYWORDS = '(xP|:D|:O|:\)|\(:|;\)|;D|;O)'
-
-        # splits by regex
-        test =re.split(KEYWORDS, code)
-        if test[-1] == '':
-            test.pop() # to remove ending blank space
-
-        # output each item
-        for i in test:
-            print(i)
-
-test = Lexer()
-test.scanner('11xP hi :D')'''
-
-# split by ^^
-# split each thing individually ???
 
 class Lexer:
     def __init__(self):
@@ -39,6 +16,11 @@ class Lexer:
         lines = re.split(regex, text)
         if lines[-1] == '':
             lines.pop()  # to remove ending blank space
+        elif lines[0] == '':
+            lines.pop(0)  # to remove beginning blank space
+        else:
+            pass
+
         return lines
 
     # Splits the string by endlines (^^) then splits by keywords
@@ -71,10 +53,11 @@ class Lexer:
         token_list = []
 
         # go through each line and tokenize it
+        # kinda hacky, sorry ;w;
         for i in code_to_tokenize:
             for j in i:
                 # identifiers
-                if j not in self.SPLITTERS:
+                if j not in self.SPLITTERS and ':3' not in j:
                     token_list.append((token_values[0], j))
                 # keywords
                 if j in self.KEYWORDS:
@@ -86,15 +69,17 @@ class Lexer:
                 elif j in self.OPERATORS:
                     token_list.append((token_values[3], j))
                 # literals
-                if j in self.LITERALS or j.isdigit() or isinstance(j, bool):
+                elif j in self.LITERALS or j.isdigit() or isinstance(j, bool):
                     token_list.append((token_values[4], j))
                 # comments
-                elif j in self.COMMENTS:
+                elif ':3' in j:
                     token_list.append((token_values[5], j))
+                else:
+                    pass
             # new line
             token_list.append((token_values[6], "<new line>"))
 
         print(token_list)
 
 test = Lexer()
-test.tokenizer("hello:3HHHH:3HHH:xthere:x:D")
+test.tokenizer("hello:3HHHH:3HHH:D:xthere:x:D")
