@@ -20,9 +20,9 @@ class Lexer:
 
         return lines
 
-        # Splits the string by endlines (^^) then splits by keywords
+    # Splits the string by endlines (:x) then splits by keywords
     def line_scan(self, code):
-        # splits by regex
+        # splits by endline (endlines are immediately discarded)
         new_lines = self.splitter(self.ENDLINE, code)
 
         # create 2d array for each new line
