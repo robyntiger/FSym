@@ -9,11 +9,11 @@ import re
 
 class Run:
     def __init__(self):
-        #self.COMMAND = ':)|:S|:@|xp|:D|:3|^^|:(|:p|:&|:O|xD|;)|(;|8)|(8|B)|:L|:d|:v|:]|[:|:\'(|:#| '
         self.COMMAND = '(:\)|:S|:@|xp|:D|:3|^^|:\(|:p|:&|:O|xD|;\)|\(;|8\)|\(8|B\)|:L|:d|:v|:\]|\[:|:\'\(|:#| )'
-        self.stack = []
+        self.stack = [1, 2, 3]
         self.prog = []
 
+    # splits a program up by command
     def split(self, program):
         self.prog = re.split(self.COMMAND, program)
 
@@ -23,19 +23,42 @@ class Run:
             if item == '':
                 self.prog.remove('')
 
-    def commands(self):
+    # pushes to stack
+    def push(self, *arg):
+        for item in arg:
+            self.stack.append(item)
+
+    # pops stack and returns item
+    def pop(self):
+        item = self.stack[-1]
+        self.stack.pop()
+
+        return item
+
+    # for debugging hhh
+    def debug(self):
+        print("BRUH")
+
+    def run_commands(self, program):
         switcher = {
-            ':3': print("placeholder"),
-            ':S': print("placeholder"),
-            ':@': print("placeholder"),
-            ':$': print("placeholder"),
-            'xp': print("placeholder"),
+            ':)': self.pop,
+            ':S': self.debug,
+            ':@': lambda a, b: self.push(a+b),
+            ':$': self.debug,
+            'xp': self.debug
         }
 
-        test = ":3"
+        self.split(program)
 
-        if test in switcher:
-            switcher[test]
+        for item in self.prog:
+            try:
+                switcher[item](1, 4)
+            except KeyError:
+                # push
+                pass
+
+        print(self.stack)
+
 
 test = Run()
-test.commands()
+test.run_commands(":)")
