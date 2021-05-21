@@ -1,35 +1,41 @@
-# the main file
+'''
+FSym
+Robyn Leinster
+'''
+
+# THIS IS SO MESSY AAA
+
 import re
 
-class Stack:
+class Run:
     def __init__(self):
+        #self.COMMAND = ':)|:S|:@|xp|:D|:3|^^|:(|:p|:&|:O|xD|;)|(;|8)|(8|B)|:L|:d|:v|:]|[:|:\'(|:#| '
+        self.COMMAND = '(:\)|:S|:@|xp|:D|:3|^^|:\(|:p|:&|:O|xD|;\)|\(;|8\)|\(8|B\)|:L|:d|:v|:\]|\[:|:\'\(|:#| )'
         self.stack = []
+        self.prog = []
 
-    def pop(self):
-        self.stack.pop()
+    def split(self, program):
+        self.prog = re.split(self.COMMAND, program)
 
-    def push(self, item):
-        self.stack.append(item)
+        # for some reason it adds empty spaces and i dunno why
+        # so get rid of them
+        for item in self.prog:
+            if item == '':
+                self.prog.remove('')
 
-# split it by regex stuff
-class Lexer:
-    def __init__(self):
-        # regex for all the commands
-        self.COMMAND = ':)|:S|:@|xp|:D|:3|^^|:(|:p|:&|:O|xD|;)|(;|8)|(8|B)|:L|:d|:v|:]|[:|:\'(|:#'
+    def commands(self):
+        switcher = {
+            ':3': print("placeholder"),
+            ':S': print("placeholder"),
+            ':@': print("placeholder"),
+            ':$': print("placeholder"),
+            'xp': print("placeholder"),
+        }
 
-    # splits a string by a regex
-    def splitter(self, regex, text):
-        lines = re.split(regex, text)
+        test = ":3"
 
-        for line in lines:
-            if line == '':
-                lines.remove('')
+        if test in switcher:
+            switcher[test]
 
-        return lines
-
-# urghhh
-if
-
-'''while True:
-    # a command line thingy
-    user_input = input("meow> ")'''
+test = Run()
+test.commands()
