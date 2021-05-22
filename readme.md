@@ -1,17 +1,24 @@
 # FSym
-FSym, short for Face Symbols (because I hate the word 'emoticon' xD), is a work in progress stack-based esolang. Created solely for the purpose of seeing if I can create my own language... :p
+FSym, short for Face Symbols (because I don't like the word 'emoticon' xD), is a work in progress stack-based esolang. Created solely for the purpose of seeing if I can create my own language... :p
 
 
-## Current commands
-(More will be added as I develop them)
+## (Proposed) Commands
+To be added
 Command | Description
 ------------ | -------------
-:) | Pops top item and returns the value
-:@ | Pops top two items, adds them together, then pushes the result
-:$ | Pops top two items, subtracts the first from the second, then pushes the result
-xp | Pops top two items, multiplies them, then pushes the result
-:D | Pops top two items, divides them, then pushes the result
-:3 | Pops top two items, performs the modulo of the first by the second, then pushes the result
-^^ | Pops top item, squares the value, then pushes the result
-:( | Pops top item, calculates the square root of the value, then pushes the result
-;) | Prints every item in the stack
+:) | Pop the top item from the stack and returns the value
+;) | Peeks stack (returns value of top item on the stack without popping)
+:& | Pop top two items in stack, adds them, then pushes result to stack
+:S | Pop top two items in stack,  subtracts the first by the second, then pushes result to stack
+:3 | Pop top two items in stack, multiplies them, then pushes result to stack
+:D | Pop top two items in stack, divides the first by the second, then pushes result to stack
+xD | Pop top item in stack, not's it, then pushes result to stack
+x3 | Pop top two items in stack, and's them, then pushes result to stack
+xP | Pop top two items in stack, or's them, then pushes result to stack
+:p | Loops while top item in stack is true (not 0)
+:d | Ends while loop
+:/ | Take user input and push to stack
+:o | Pop top item in stack and print as int
+:@ | Pop top item in stack and print as ASCII character
+:( | End the program
+:# | Print every item in the stack
