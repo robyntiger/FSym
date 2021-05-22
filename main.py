@@ -10,7 +10,7 @@ import re
 class Run:
     def __init__(self):
         self.COMMAND = '(:\)|:S|:@|xp|:D|:3|^^|:\(|:p|:&|:O|xD|;\)|\(;|8\)|\(8|B\)|:L|:d|:v|:\]|\[:|:\'\(|:#| )'
-        self.stack = []
+        self.stack = [1, 2, 3]
         self.prog = []
 
     # splits a program up by command
@@ -27,36 +27,26 @@ class Run:
 
     # pops stack and returns item
     def stack_pop(self):
-        item = self.stack[-1]
-        self.stack.pop()
+        if self.stack:
+            item = self.stack[-1]
+            self.stack.pop()
 
-        return item
-
-    # outputs entire stack
-    def debug(self):
-        for item in self.stack:
-            print(item)
-
-    # adds top two numbers in stack
-    def add(self):
-        self.stack_push(int(self.stack_pop()) + int(self.stack_pop()))
+            return item
+        else:
+            pass
 
     def run_commands(self, txt):
-        self.split(txt)
-
+        # test
         switcher = {
-            ':)': self.stack_pop,
-            ':@': self.add,
-            ';)': self.debug
+            ':)': lambda: self.stack_pop(),
+            ':@': lambda: self.stack_push(int(self.stack_pop()) + int(self.stack_pop())),
+            ';)': lambda: [print(item) for item in self.stack]
         }
 
-        for item in self.prog:
-            try:
-                # runs command
-                switcher[item]()
-            except:
-                # if it's not a command, it's assumed to be a number
-                self.stack_push(item)
+        test2 = [';)']
+
+        for item in test2:
+            switcher[item]()
 
 test = Run()
-test.run_commands("2 2 :@ ;)")
+test.run_commands("")
