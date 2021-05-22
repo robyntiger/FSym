@@ -53,11 +53,11 @@ class Run:
         }
 
         for item in self.prog:
-            switcher[item]()
+            switcher[item]()'''
             '''try:
                 switcher[item]()
             except:
-                self.stack_push(item) # pushes num to stack'''
+                self.stack_push(item) # pushes num to stack
 
 test = Run()
 test.run_commands(":@")
