@@ -7,7 +7,7 @@ To be added
 Command | Description
 ------------ | -------------
 :) | Pop the top item from the stack and returns the value
-;) | Peeks stack (returns value of top item on the stack without popping)
+;) | Peeks the stack (returns value of top item on the stack without popping)
 :& | Pop top two items in stack, adds them, then pushes result to stack
 :S | Pop top two items in stack,  subtracts the first by the second, then pushes result to stack
 :3 | Pop top two items in stack, multiplies them, then pushes result to stack
