@@ -32,6 +32,11 @@ class Run:
 
         return item
 
+    # outputs entire stack
+    def debug(self):
+        for item in self.stack:
+            print(item)
+
     # adds top two numbers in stack
     def add(self):
         self.stack_push(int(self.stack_pop()) + int(self.stack_pop()))
@@ -42,9 +47,8 @@ class Run:
         switcher = {
             ':)': self.stack_pop,
             ':@': self.add,
+            ';)': self.debug
         }
-
-        print(self.prog)
 
         for item in self.prog:
             try:
@@ -54,7 +58,5 @@ class Run:
                 # if it's not a command, it's assumed to be a number
                 self.stack_push(item)
 
-        print(self.stack)
-
 test = Run()
-test.run_commands("2 2        :@")
+test.run_commands("2 2 :@ ;)")

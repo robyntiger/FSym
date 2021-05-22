@@ -1,4 +1,6 @@
-import re
+# old
+
+'''import re
 
 class Lexer:
     def __init__(self):
@@ -74,4 +76,4 @@ class Lexer:
         print(token_list)
 
 test = Lexer()
-test.tokenizer("test^^please god work^^test:3f;D")
+test.tokenizer("test^^please god work^^test:3f;D")'''
