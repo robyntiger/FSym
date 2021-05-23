@@ -62,3 +62,5 @@ class Functions:
                 print("Error")
 
             self.curr_index = self.curr_index + 1
+
+        self.curr_index = 0
