@@ -20,5 +20,4 @@ xP | Pop top two items in stack, or's them, then pushes result to stack
 :D | Push 1 to stack
 :o | Pop top item in stack and print as int
 :@ | Pop top item in stack and print as ASCII character
-:( | End the program
 :# | Print every item in the stack

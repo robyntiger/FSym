@@ -36,7 +36,9 @@ class Functions:
         self.stack_push(a)
         self.stack_push(b)
 
-    def run_commands(self):
+    def run_commands(self, program):
+        self.prog = program
+
         # new switcher yay
         switcher = {
             ':)': lambda: self.stack_pop(),
@@ -60,8 +62,3 @@ class Functions:
                 print("Error")
 
             self.curr_index = self.curr_index + 1
-
-            print(self.stack)
-
-test = Functions()
-test.run_commands()

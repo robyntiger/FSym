@@ -1,8 +1,8 @@
 import re
 
 # not sure if this even counts as a lexer anymore xD
-COMMAND = '(:\)|;\)|:&|:S|:3|:D|:/|xD|x3|xp|:p|:d|:D|:o|:@|:\(|:#| )'
-COMMAND_LIST = [':)',';)',':&',':S',':3',':/','xD','x3','xp',':p',':d',':D',':o',':@',':(', ':#']
+COMMAND = '(:\)|;\)|:&|:S|:3|:D|:/|xD|x3|xp|:p|:d|:D|:o|:@|:#| )'
+COMMAND_LIST = [':)',';)',':&',':S',':3',':/','xD','x3','xp',':p',':d',':D',':o',':@', ':#']
 
 # splits a program up by command
 def lexer(program):
@@ -33,16 +33,7 @@ def lexer(program):
 
         i = i + 1
 
-    # check if there's an end line
-    if ':(' not in prog:
-        correct_syntax = False
-    else:
-        # ignores everything after ':('
-        end_index = prog.index(':(')
-        prog = prog[:end_index]
-
     if not correct_syntax:
-        print("Error")
-        return None
+        return "Error"
     else:
         return prog
