@@ -14,14 +14,35 @@ def lexer(program):
         if item not in COMMAND_LIST:
             prog.remove(item)
 
-    # ignores everything after ':(' because that ends the program
-    end_index = prog.index(':(')
-    prog = prog[:end_index]
-
     # check if loop is opened and closed
-    for item in prog:
-        pass
+    func_count = []
+    correct_syntax = True
 
-    return prog
+    i = 0
+    while i < len(prog) and correct_syntax:
+        curr_item = prog[i]
 
-lexer(":) :/:( :o:#")
+        if curr_item == ':p':
+            func_count.append(':p')
+
+        elif curr_item == ':d':
+            if len(func_count) == 0:
+                correct_syntax = False
+            else:
+                func_count.pop()
+
+        i = i + 1
+
+    # check if there's an end line
+    if ':(' not in prog:
+        correct_syntax = False
+    else:
+        # ignores everything after ':('
+        end_index = prog.index(':(')
+        prog = prog[:end_index]
+
+    if not correct_syntax:
+        print("Error")
+        return None
+    else:
+        return prog
