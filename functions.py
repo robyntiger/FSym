@@ -68,7 +68,8 @@ class Functions:
                     else:
                         self.stack_push(ord(self.prog[self.curr_index]))
                 except:
-                    print("error")
+                    print("Error")
+                    break
 
             self.curr_index = self.curr_index + 1
 

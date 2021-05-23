@@ -27,7 +27,10 @@ def lexer(program):
         curr_item = prog[i]
 
         if curr_item == ':p':
-            func_count.append(':p')
+            if len(func_count) == 0:
+                func_count.append(':p')
+            else:
+                correct_syntax = False
 
         elif curr_item == ':d':
             if len(func_count) == 0:
@@ -39,8 +42,8 @@ def lexer(program):
 
     # check if everything is a valid command
     for item in prog:
-        if item in COMMAND_LIST or item.isdigit() or isascii(item):
-            continue
+        if (item in COMMAND_LIST) or item.isdigit() or isascii(item):
+            pass
         else:
             correct_syntax = False
 
