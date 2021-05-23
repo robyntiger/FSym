@@ -62,7 +62,8 @@ class Functions:
             try:
                 switcher[self.prog[self.curr_index]]()
             except:
-                print("Error")
+                self.stack_push(self.prog[self.curr_index])
+                #print("Error")
 
             self.curr_index = self.curr_index + 1
 

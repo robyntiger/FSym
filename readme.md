@@ -5,6 +5,7 @@ FSym, short for Face Symbols (because I don't like the word 'emoticon' xD), is a
 ## Commands
 Command | Description
 ------------ | -------------
+123 | Pushes value to stack
 :) | Pop the top item from the stack and returns the value
 ;) | Swaps top two items in the stack
 :& | Pop top two items in stack, adds them, then pushes result to stack
@@ -23,7 +24,4 @@ xP | Pop top two items in stack, or's them, then pushes result to stack
 
 ## Examples
 ### Hello World
-```
-:D :D :D :D :D :& :& :& :& :D :D :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :3 :D :D :& :D :D :& :3 :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :& :& :3 :3 :D :D :& :D :D :D :D :D :& :& :& :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :D :& :3 :D :& :D :D :D :& :& :& :D :D :& :D :D :D :D :D :& :& :& :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :D :& :3 :D :& :D :D :& :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :D :D :& :& :& :& :3 :3 :D :D :D :& :& ;) :S :D :D :& :D :D :& :D :D :& :D :D :& :D :D :& :3 :3 :3 :3 :D :D :& :D :D :D :D :D :& :& :& :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :D :& :3 :D :& :D :D :& :D :D :& :3 :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :& :& :3 :3 :D :D :& :D :D :& :3 :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :& :& :3 :3 :D :D :& :D :D :& :3 :D :D :D :D :D :& :& :& :& :D :D :D :D :D :& :& :& :& :3 :3 :D :& :D :D :& :D :D :& :D :D :& :3 :3 :D :D :D :& :& :D :D :D :& :& :3 :3 :@ :@ :@ :@ :@ :@ :@ :@ :@ :@ :@
-```
-(I'm so sorry xD)
+To be added :D
