@@ -10,9 +10,9 @@ def lexer(program):
 
     # remove empty lines & spaces, and anything that isnt a command
     prog = [item for item in prog if item.strip()]
-    for item in prog:
-        if item not in COMMAND_LIST and not item.isdigit():
-            prog.remove(item)
+    '''for item in prog:
+        if item not in COMMAND_LIST and (not item.isdigit() or not item.isalpha()):
+            prog.remove(item)'''
 
     # check if loop is opened and closed
     func_count = []

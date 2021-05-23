@@ -62,8 +62,21 @@ class Functions:
             try:
                 switcher[self.prog[self.curr_index]]()
             except:
-                self.stack_push(self.prog[self.curr_index])
-                #print("Error")
+                try:
+                    if self.prog[self.curr_index].isdigit():
+                        self.stack_push(int(self.prog[self.curr_index]))
+                    else:
+                        self.stack_push(ord(self.prog[self.curr_index]))
+                except:
+                    print("error")
+
+                '''try:
+                    if self.prog[self.curr_index].isalpha():
+                        self.stack_push(ord(self.prog[self.curr_index]))
+                    else:
+                        self.stack_push(int(self.prog[self.curr_index]))
+                except:
+                    print("error")'''
 
             self.curr_index = self.curr_index + 1
 
