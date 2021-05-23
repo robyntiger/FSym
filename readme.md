@@ -18,7 +18,7 @@ xP | Pop top two items in stack, or's them, then pushes result to stack
 :D | Push 1 to stack
 :o | Pop top item in stack and print as int
 :@ | Pop top item in stack and print as ASCII character
-:# | Print every item in the stack
+:# | Print every item in the stack (for debugging purposes)
 
 
 You can push a number/character/ASCII code to the stack without using any of the commands. The stack only stores single character codes so strings (e.g. "hello") can't be pushed in one command.
@@ -27,3 +27,6 @@ You can push a number/character/ASCII code to the stack without using any of the
 ## Examples
 ### Hello World!
 ```! d l r o W 32 o l l e H 12 :p ;) :@ :D ;) :S :d```
+
+## Usage
+```Python main.py <filename>```
