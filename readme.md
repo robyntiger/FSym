@@ -20,3 +20,10 @@ xP | Pop top two items in stack, or's them, then pushes result to stack
 :o | Pop top item in stack and print as int
 :@ | Pop top item in stack and print as ASCII character
 :# | Print every item in the stack
+
+## Examples
+### Hello World
+```
+:D :D :D :D :D :& :& :& :& :D :D :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :3 :D :D :& :D :D :& :3 :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :& :& :3 :3 :D :D :& :D :D :D :D :D :& :& :& :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :D :& :3 :D :& :D :D :D :& :& :& :D :D :& :D :D :D :D :D :& :& :& :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :D :& :3 :D :& :D :D :& :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :D :D :& :& :& :& :3 :3 :D :D :D :& :& ;) :S :D :D :& :D :D :& :D :D :& :D :D :& :D :D :& :3 :3 :3 :3 :D :D :& :D :D :D :D :D :& :& :& :& :3 :D :D :D :D :D :& :& :& :& :D :D :& :3 :D :& :3 :D :& :D :D :& :D :D :& :3 :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :& :& :3 :3 :D :D :& :D :D :& :3 :D :D :D :& :& :D :D :D :& :& :3 :D :D :D :& :& :3 :3 :D :D :& :D :D :& :3 :D :D :D :D :D :& :& :& :& :D :D :D :D :D :& :& :& :& :3 :3 :D :& :D :D :& :D :D :& :D :D :& :3 :3 :D :D :D :& :& :D :D :D :& :& :3 :3 :@ :@ :@ :@ :@ :@ :@ :@ :@ :@ :@
+```
+(I'm so sorry xD)
