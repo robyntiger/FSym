@@ -1,18 +1,22 @@
 import re
 
 # not sure if this even counts as a lexer anymore xD
-COMMAND = '(:\)|;\)|:&|:S|:3|:D|:/|xD|x3|xp|:p|:d|:D|:o|:@|:\(|:#| )'
 COMMAND_LIST = [':)',';)',':&',':S',':3',':/','xD','x3','xp',':p',':d',':D',':o',':@',':(', ':#']
+
+# checks if character is ascii
+def isascii(string):
+    if len(string) > 1:
+        return False
+    else:
+        if ord(string) < 128:
+            return True
 
 # splits a program up by command
 def lexer(program):
-    prog = re.split(COMMAND, program)
+    correct_syntax = True
 
-    # remove empty lines & spaces, and anything that isnt a command
-    prog = [item for item in prog if item.strip()]
-    '''for item in prog:
-        if item not in COMMAND_LIST and (not item.isdigit() or not item.isalpha()):
-            prog.remove(item)'''
+    # split by space
+    prog = program.split()
 
     # check if loop is opened and closed
     func_count = []
@@ -33,6 +37,14 @@ def lexer(program):
 
         i = i + 1
 
+    # check if everything is a valid command
+    for item in prog:
+        if item in COMMAND_LIST or item.isdigit() or isascii(item):
+            continue
+        else:
+            correct_syntax = False
+
+    # return error or program
     if not correct_syntax:
         return "Error"
     else:
