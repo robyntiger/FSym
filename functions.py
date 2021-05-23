@@ -47,12 +47,15 @@ class Functions:
             ':S': lambda: self.stack_push(self.stack_pop()-self.stack_pop()),
             ':3': lambda: self.stack_push(self.stack_pop()*self.stack_pop()),
             ':/': lambda: self.stack_push(self.stack_pop()/self.stack_pop()),
+            'xD': lambda: self.stack_push(int(bool((not self.stack_pop())))),
+            'x3': lambda: self.stack_push(int(bool((self.stack_pop() and self.stack_pop())))),
+            'xp': lambda: self.stack_push(int(bool((self.stack_pop() or self.stack_pop())))),
             ':p': lambda: self.cont(),
             ':d': lambda: self.loop(),
             ':D': lambda: self.stack_push(int(1)),
             ':o': lambda: print(self.stack_pop()),
             ':@': lambda: print(chr(self.stack_pop())),
-            ':#': lambda: [print(item) for item in self.stack]
+            ':#': lambda: [print(item) for item in reversed(self.stack)]
         }
 
         while self.curr_index < len(self.prog):

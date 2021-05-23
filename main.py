@@ -3,12 +3,12 @@ from functions import *
 from lexer import *
 
 
-test = Functions()
+command_line = Functions()
 
 while True:
     curr_line = input("meow> ")
 
     if lexer(curr_line) != "Error":
-        test.run_commands(lexer(curr_line))
+        command_line.run_commands(lexer(curr_line))
     else:
         print("Error")
