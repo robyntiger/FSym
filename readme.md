@@ -29,7 +29,8 @@ You can push a number/character/ASCII code to the stack without using any of the
 ```! d l r o W 32 o l l e H 12 :p ;) :@ :D ;) :S :d```
 ### Fizzbuzz
 ```100 :p :D :D 3 ;) :/ 3 :3 ;) :S xD :p Z Z I F :@ :@ :@ :@ xD :d :) :D :D 5 ;) :/ 5 :3 ;) :S xD :p Z Z U B :@ :@ :@ :@ xD :d :) :D :D :D :D 3 ;) :/ 3 :3 ;) :S ;) :D 5 ;) :/ 5 :3 ;) :S ;) x3 :p ;) :D :o ;) xD :d :) :) 1 ;) :S 32 :@ :d```
-(There's probably a shorter solution, hoewever this does work.)
+
+(There's probably a shorter solution, however this does work.)
 
 ## Usage
 ```Python main.py <filename>```
