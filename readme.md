@@ -15,7 +15,7 @@ x3 | Pop top two items in stack, and's them, then pushes result to stack
 xP | Pop top two items in stack, or's them, then pushes result to stack
 :p | Loops while top item in stack is true (not 0)
 :d | Ends while loop
-:D | Push 1 to stack
+:D | Get top item from stack without popping then push the value to stack
 :o | Pop top item in stack and print as int
 :@ | Pop top item in stack and print as ASCII character
 :# | Print every item in the stack (for debugging purposes)

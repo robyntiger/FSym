@@ -27,10 +27,7 @@ def lexer(program):
         curr_item = prog[i]
 
         if curr_item == ':p':
-            if len(func_count) == 0:
-                func_count.append(':p')
-            else:
-                correct_syntax = False
+            func_count.append(':p')
 
         elif curr_item == ':d':
             if len(func_count) == 0:

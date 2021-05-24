@@ -23,23 +23,38 @@ class Functions:
         if self.stack[-1] != 0:
             # find matching ':p'
             i = 1
-            index = self.curr_index-1
+            index = self.curr_index
             while i > 0:
+                index = index - 1
                 if self.prog[index] == ':d':
                     i = i+1
                 elif self.prog[index] == ':p':
                     i = i-1
                 else:
                     pass
-                index = index - 1
 
             self.curr_index = index
         else:
             pass
 
-    # does nothing
+    # continue or go to end of loop
     def cont(self):
-        pass
+        if self.stack[-1] == 0:
+            # find matching ':p'
+            i = 1
+            index = self.curr_index
+            while i > 0:
+                index = index + 1
+                if self.prog[index] == ':p':
+                    i = i + 1
+                elif self.prog[index] == ':d':
+                    i = i - 1
+                else:
+                    pass
+
+            self.curr_index = index
+        else:
+            pass
 
     # not sure if this is even allowed but whatever qwq
     def swap(self):
@@ -58,13 +73,13 @@ class Functions:
             ':&': lambda: self.stack_push(self.stack_pop()+self.stack_pop()),
             ':S': lambda: self.stack_push(self.stack_pop()-self.stack_pop()),
             ':3': lambda: self.stack_push(self.stack_pop()*self.stack_pop()),
-            ':/': lambda: self.stack_push(self.stack_pop()/self.stack_pop()),
+            ':/': lambda: self.stack_push(int(self.stack_pop()/self.stack_pop())),
             'xD': lambda: self.stack_push(int(bool((not self.stack_pop())))),
             'x3': lambda: self.stack_push(int(bool((self.stack_pop() and self.stack_pop())))),
             'xp': lambda: self.stack_push(int(bool((self.stack_pop() or self.stack_pop())))),
             ':p': lambda: self.cont(),
             ':d': lambda: self.loop(),
-            ':D': lambda: self.stack_push(int(1)),
+            ':D': lambda: self.stack_push(self.stack[-1]),
             ':o': lambda: print(self.stack_pop(), end=''),
             ':@': lambda: print(chr(self.stack_pop()), end=''),
             ':#': lambda: [print(item, end='') for item in reversed(self.stack)]
@@ -80,7 +95,6 @@ class Functions:
                     else:
                         self.stack_push(ord(self.prog[self.curr_index]))
                 except:
-                    print("Error")
                     break
 
             self.curr_index = self.curr_index + 1
