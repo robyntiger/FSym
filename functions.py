@@ -21,13 +21,25 @@ class Functions:
 
     def loop(self):
         if self.stack[-1] != 0:
-            self.curr_index = self.return_index
+            # find matching ':p'
+            i = 1
+            index = self.curr_index-1
+            while i > 0:
+                if self.prog[index] == ':d':
+                    i = i+1
+                elif self.prog[index] == ':p':
+                    i = i-1
+                else:
+                    pass
+                index = index - 1
+
+            self.curr_index = index
         else:
             pass
 
-    # sets return index for loop
+    # does nothing
     def cont(self):
-        self.return_index = self.curr_index
+        pass
 
     # not sure if this is even allowed but whatever qwq
     def swap(self):
@@ -53,9 +65,9 @@ class Functions:
             ':p': lambda: self.cont(),
             ':d': lambda: self.loop(),
             ':D': lambda: self.stack_push(int(1)),
-            ':o': lambda: print(self.stack_pop()),
-            ':@': lambda: print(chr(self.stack_pop())),
-            ':#': lambda: [print(item) for item in reversed(self.stack)]
+            ':o': lambda: print(self.stack_pop(), end=''),
+            ':@': lambda: print(chr(self.stack_pop()), end=''),
+            ':#': lambda: [print(item, end='') for item in reversed(self.stack)]
         }
 
         while self.curr_index < len(self.prog):
@@ -72,5 +84,3 @@ class Functions:
                     break
 
             self.curr_index = self.curr_index + 1
-
-        self.curr_index = 0
