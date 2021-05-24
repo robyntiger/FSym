@@ -27,6 +27,8 @@ You can push a number/character/ASCII code to the stack without using any of the
 ## Examples
 ### Hello World!
 ```! d l r o W 32 o l l e H 12 :p ;) :@ :D ;) :S :d```
+### Fizzbuzz
+```51 :p :D :D 3 ;) :/ 3 :3 ;) :S xD :p Z Z I F :@ :@ :@ :@ xD :d :) :D :D 3 ;) :/ 3 :3 ;) :S :p ;) :D 1 ;) :S :o ;) xD :d :) 1 ;) :S :d```
 
 ## Usage
 ```Python main.py <filename>```
