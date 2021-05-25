@@ -26,7 +26,7 @@ You can push a number/character/ASCII code to the stack without using any of the
 
 ## Examples
 ### Hello World!
-```! d l r o W 32 o l l e H 12 :p ;) :@ :D ;) :S :d```
+```! d l r o W 32 o l l e H 12 :p ;) :@ 1 ;) :S :d```
 ### Fizzbuzz
 ```100 :p :D :D 3 ;) :/ 3 :3 ;) :S xD :p Z Z I F :@ :@ :@ :@ xD :d :) :D :D 5 ;) :/ 5 :3 ;) :S xD :p Z Z U B :@ :@ :@ :@ xD :d :) :D :D :D :D 3 ;) :/ 3 :3 ;) :S ;) :D 5 ;) :/ 5 :3 ;) :S ;) x3 :p ;) :D :o ;) xD :d :) :) 1 ;) :S 32 :@ :d```
 
