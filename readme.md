@@ -1,5 +1,5 @@
 # FSym
-FSym, short for Face Symbols (because I don't like the word 'emoticon' xD), is a work in progress stack-based esolang. Created solely for the purpose of seeing if I can create my own language... :p
+FSym, short for Face Symbols (because I don't like the word 'emoticon' xD), is a stack-based esolang. Created solely for the purpose of seeing if I can create my own language... :p
 
 ## Commands
 Command | Description
